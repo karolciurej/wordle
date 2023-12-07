@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.correct {
+    background-color: green;
+}
+
+.present {
+    background-color: yellow;
+}
+
+.incorrect {
+    background-color: red;
+}
+
+.absent {
+    background-color: red;
+}
