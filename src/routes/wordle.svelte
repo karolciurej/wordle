@@ -15,6 +15,7 @@
     let checkWordExistence = true; 
     let result = false;
     let modalMessage = '';
+    let highContrast = false; 
 
     function showResult(message) {
         modalMessage = message;
@@ -27,6 +28,7 @@
         currentTheme = event.detail.selectedTheme;
         gameMode = event.detail.selectedMode;
         checkWordExistence = event.detail.checkWordExistence;
+        highContrast = event.detail.highContrast;
         showModal = false;
     }
 
@@ -261,10 +263,11 @@
     <Settings on:save={handleSaveSettings} />
 {/if}
 <div
-    class="game-container bg-white dark:bg-black mt-12 h-screen {currentTheme ===
+    class="game-container bg-white dark:bg-black pt-12 h-screen {currentTheme ===
     'dark'
         ? 'dark'
-        : ''}"
+        : ''}
+        {highContrast == true ? 'high-contrast' : ''}"
 >
     {#if isLoading}
         <div
@@ -368,5 +371,11 @@
 
     .dark button {
         border: solid 1px white;
+    }
+    .high-contrast  button{
+        border: solid 1px greenyellow;
+    }
+    .high-contrast{
+        color: yellow;
     }
 </style>

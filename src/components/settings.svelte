@@ -6,9 +6,9 @@
     let selectedTheme = 'light'; 
     let selectedMode = 'api';
     let checkWordExistence = true;
-
+    let highContrast = false
     function saveSettings() {
-        dispatch('save', { selectedTheme, selectedMode, checkWordExistence });
+        dispatch('save', { selectedTheme, selectedMode, checkWordExistence, highContrast });
     }
 </script>
 
@@ -21,6 +21,10 @@
                 <option value="light">Jasny</option>
                 <option value="dark">Ciemny</option>
             </select>
+        </label>
+        <label>
+            <input type="checkbox" bind:checked={highContrast}>
+            Wysoki kontrast
         </label>
     </div>
     <div>
